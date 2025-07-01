@@ -611,7 +611,7 @@ export const ChessBoard = ({ playerColor, onRestartGame, onBackToStart }: ChessB
           <div className="flex-1 flex flex-col items-center">
             {/* Coordenadas superiores */}
             <div className="flex mb-2">
-              {["a", "b", "c", "d", "e", "f", "g", "h"].map((file, index) => (
+              {[].map((file, index) => (
                 <div key={file} className="w-[75px] text-center text-white font-bold text-lg">
                   {playerColor === "white" ? file : ["h", "g", "f", "e", "d", "c", "b", "a"][index]}
                 </div>
@@ -621,7 +621,7 @@ export const ChessBoard = ({ playerColor, onRestartGame, onBackToStart }: ChessB
             <div className="flex">
               {/* Coordenadas laterais esquerdas */}
               <div className="flex flex-col mr-2">
-                {[8, 7, 6, 5, 4, 3, 2, 1].map((rank, index) => (
+                {[].map((rank, index) => (
                   <div key={rank} className="h-[75px] flex items-center text-white font-bold text-lg">
                     {playerColor === "white" ? rank : [1, 2, 3, 4, 5, 6, 7, 8][index]}
                   </div>
@@ -663,25 +663,9 @@ export const ChessBoard = ({ playerColor, onRestartGame, onBackToStart }: ChessB
                   </div>
                 ))}
               </div>
-
-              {/* Coordenadas laterais direitas */}
-              <div className="flex flex-col ml-2">
-                {[8, 7, 6, 5, 4, 3, 2, 1].map((rank, index) => (
-                  <div key={rank} className="h-[75px] flex items-center text-white font-bold text-lg">
-                    {playerColor === "white" ? rank : [1, 2, 3, 4, 5, 6, 7, 8][index]}
-                  </div>
-                ))}
-              </div>
             </div>
 
-            {/* Coordenadas inferiores */}
-            <div className="flex mt-2">
-              {["a", "b", "c", "d", "e", "f", "g", "h"].map((file, index) => (
-                <div key={file} className="w-[75px] text-center text-white font-bold text-lg">
-                  {playerColor === "white" ? file : ["h", "g", "f", "e", "d", "c", "b", "a"][index]}
-                </div>
-              ))}
-            </div>
+      
 
             {/* Controles de navegação */}
             {gameHistory.length > 0 && (
